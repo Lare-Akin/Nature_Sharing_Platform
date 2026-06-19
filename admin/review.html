@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Curator Review — Serenscape</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Serenscape home">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">Serenscape <span class="admin-badge">Curator</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Curator navigation">
+        <ul role="list">
+          <li><a href="../index.html">View gallery</a></li>
+          <li><a href="review.html" aria-current="page">Review submissions</a></li>
+          <li><button class="btn-text" id="signout-btn">Sign out</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login gate -->
+  <div id="login-gate" class="login-gate">
+    <div class="login-card">
+      <div class="wisdom-mark" aria-hidden="true">✦</div>
+      <h1 class="login-title">Curator access</h1>
+      <p class="login-sub">Sign in to review and approve submitted photographs.</p>
+      <form id="login-form" novalidate aria-label="Sign in form">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email</label>
+          <input class="form-input" type="email" id="login-email" name="email"
+                 required autocomplete="email" />
+        </div>
+        <div class="form-group" style="margin-top:1rem;">
+          <label class="form-label" for="login-pass">Password</label>
+          <input class="form-input" type="password" id="login-pass" name="password"
+                 required autocomplete="current-password" />
+        </div>
+        <p class="form-error" id="login-error" role="alert" aria-live="assertive" style="margin-top:0.5rem;"></p>
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:1.5rem;" id="login-btn">Sign in</button>
+      </form>
+      <p class="login-hint">Access is restricted to authorised curators only.</p>
+    </div>
+  </div>
+
+  <!-- Main review interface (shown after login) -->
+  <main id="main-content" class="review-main" hidden>
+
+    <div class="review-header">
+      <h1>Submissions awaiting review</h1>
+      <p id="pending-count" class="review-count" aria-live="polite"></p>
+    </div>
+
+    <div id="review-loading" class="review-loading" aria-live="assertive">
+      Loading submissions…
+    </div>
+
+    <div id="review-empty" class="review-empty" hidden>
+      <p>✦ No pending submissions. The queue is clear.</p>
+    </div>
+
+    <!-- Submission cards -->
+    <div id="review-grid" class="review-grid" role="list" aria-label="Pending submissions"></div>
+
+  </main>
+
+  <!-- Detail / edit modal -->
+  <div id="review-modal" class="review-modal" role="dialog" aria-modal="true"
+       aria-labelledby="modal-title" hidden>
+    <div class="review-modal-backdrop" id="modal-backdrop"></div>
+    <div class="review-modal-card">
+      <button class="lightbox-close" id="modal-close" aria-label="Close submission detail">✕</button>
+
+      <div class="review-modal-inner">
+        <div class="review-modal-image">
+          <img id="modal-img" src="" alt="" />
+        </div>
+        <div class="review-modal-content">
+          <h2 id="modal-title" class="review-modal-title"></h2>
+
+          <form id="edit-form" novalidate aria-label="Edit submission">
+            <div class="form-group">
+              <label class="form-label" for="edit-title">Title</label>
+              <input class="form-input" type="text" id="edit-title" maxlength="80" />
+            </div>
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-label" for="edit-wisdom">Words of wisdom</label>
+              <textarea class="form-textarea" id="edit-wisdom" style="min-height:140px;"></textarea>
+            </div>
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-label" for="edit-attribution">Attribution</label>
+              <input class="form-input" type="text" id="edit-attribution" maxlength="100" />
+            </div>
+            <div class="form-group" style="margin-top:1rem;">
+              <label class="form-label" for="edit-alt">Alt text (image description)</label>
+              <input class="form-input" type="text" id="edit-alt" maxlength="200" />
+            </div>
+          </form>
+
+          <div class="review-meta">
+            <p><strong>Contributor:</strong> <span id="modal-contributor"></span></p>
+            <p><strong>Location:</strong> <span id="modal-location"></span></p>
+            <p><strong>Submitted:</strong> <span id="modal-date"></span></p>
+          </div>
+
+          <div class="review-actions">
+            <button class="btn-approve" id="btn-approve" aria-label="Approve and publish this submission">
+              ✓ Approve &amp; publish
+            </button>
+            <button class="btn-reject" id="btn-reject" aria-label="Reject and delete this submission">
+              ✕ Reject
+            </button>
+          </div>
+
+          <p class="form-error" id="action-error" role="alert" aria-live="assertive"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-client.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

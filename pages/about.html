@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Serenscape — a calm space for nature photography, wisdom, and mindfulness." />
+  <title>About — Serenscape</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    .about-main { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-md); }
+    .about-main h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem,5vw,3.5rem);
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: var(--space-md);
+      line-height: 1.15;
+    }
+    .about-section { margin-bottom: var(--space-lg); }
+    .about-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: var(--space-sm);
+    }
+    .about-section p {
+      color: var(--stone);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .about-divider { border: none; border-top: 1px solid rgba(184,147,90,0.2); margin: var(--space-lg) 0; }
+    .about-cta {
+      text-align: center;
+      padding: var(--space-lg);
+      background: var(--parchment);
+      border-radius: var(--r-lg);
+      border: 1.5px solid rgba(184,147,90,0.2);
+    }
+    .about-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--ink);
+      margin-bottom: var(--space-sm);
+    }
+    .about-cta p { color: var(--stone); max-width: 44ch; margin: 0 auto var(--space-md); line-height: 1.7; }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Serenscape home">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">Serenscape</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul role="list">
+          <li><a href="../index.html">Gallery</a></li>
+          <li><a href="submit.html">Share a Moment</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu">☰</button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <ul role="list">
+        <li><a href="../index.html">Gallery</a></li>
+        <li><a href="submit.html">Share a Moment</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="about-main">
+    <p class="hero-eyebrow">About this space</p>
+    <h1>A sanctuary built from shared stillness</h1>
+
+    <div class="about-section">
+      <h2>Why Serenscape exists</h2>
+      <p>The world moves faster than it should. Notifications, deadlines, noise — they crowd the edges of every quiet moment. Serenscape exists as a place to breathe.</p>
+      <p>Here, nature photographs are paired with words of wisdom and soft ambient sound. Not to be consumed, but to be sat with. Each image is an invitation to slow down, if only for a minute.</p>
+    </div>
+
+    <hr class="about-divider" />
+
+    <div class="about-section">
+      <h2>How it works</h2>
+      <p>Anyone can submit a photograph of nature — a mist-covered valley, a solitary tree, the last light on the water. Alongside the image, contributors share words: a reflection, a quote, a line that captures the feeling of being there.</p>
+      <p>A curator reviews every submission before it appears in the gallery. This keeps the space intentional. Not everything needs to be fast, or plentiful. Quality over quantity, always.</p>
+    </div>
+
+    <hr class="about-divider" />
+
+    <div class="about-section">
+      <h2>The soundscapes</h2>
+      <p>While viewing a photograph, you can choose an ambient soundscape — forest birdsong, gentle rain, ocean waves, mountain wind, or the resonance of Tibetan bells. Or you can sit in silence. The choice is yours, as it should be.</p>
+    </div>
+
+    <hr class="about-divider" />
+
+    <div class="about-section">
+      <h2>Accessibility</h2>
+      <p>Serenscape is built to be experienced by everyone. Every photograph has a written description for screen readers, controls can be used with a keyboard alone, and the site respects your system's motion preferences. If you encounter any barriers, please let us know.</p>
+    </div>
+
+    <div class="about-cta">
+      <h2>Add your voice to the stillness</h2>
+      <p>If you have a photograph that made you stop and breathe, we'd be honoured to share it here.</p>
+      <a href="submit.html" class="btn-primary">Share a photograph</a>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">✦ Serenscape</p>
+      <p class="footer-line">A place of shared stillness. Every photograph a gift.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="submit.html">Share a photograph</a></li>
+          <li><a href="about.html">About this space</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

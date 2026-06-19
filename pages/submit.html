@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share a nature photograph with the Serenscape community. Your image will be reviewed before appearing in the gallery." />
+  <title>Share a Moment — Serenscape</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/submit.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="Serenscape home">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">Serenscape</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul role="list">
+          <li><a href="../index.html">Gallery</a></li>
+          <li><a href="submit.html" aria-current="page">Share a Moment</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <ul role="list">
+        <li><a href="../index.html">Gallery</a></li>
+        <li><a href="submit.html">Share a Moment</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="submit-main">
+
+    <div class="submit-intro">
+      <p class="hero-eyebrow">Contribute</p>
+      <h1>Share a moment of nature</h1>
+      <p class="submit-lead">Your photograph will be reviewed by our curator before appearing in the gallery. Every image is a gift to those who need stillness.</p>
+    </div>
+
+    <!-- Success message (hidden until submission) -->
+    <div class="submit-success" id="submit-success" role="alert" aria-live="assertive" hidden>
+      <span class="success-icon" aria-hidden="true">✦</span>
+      <h2>Thank you for sharing.</h2>
+      <p>Your photograph has been received and is with our curator. When approved, it will appear in the gallery. Your contribution matters.</p>
+      <a href="../index.html" class="btn-primary" style="margin-top:1.5rem;">Return to the gallery</a>
+    </div>
+
+    <!-- Submission form -->
+    <form
+      id="submit-form"
+      class="submit-form"
+      novalidate
+      aria-label="Photograph submission form"
+    >
+
+      <!-- Photo upload -->
+      <fieldset class="form-section">
+        <legend class="form-section-title">Your photograph</legend>
+
+        <div class="form-group">
+          <div class="upload-zone" id="upload-zone" role="button" tabindex="0"
+               aria-label="Upload nature photograph. Click or drag and drop."
+               aria-describedby="upload-hint">
+            <input
+              type="file"
+              id="photo-input"
+              name="photo"
+              accept="image/jpeg,image/png,image/webp"
+              aria-label="Choose a photograph to upload"
+              aria-describedby="upload-hint"
+              required
+            />
+            <div class="upload-content" id="upload-content">
+              <div class="upload-icon" aria-hidden="true">📷</div>
+              <p class="upload-prompt">
+                <strong>Click to choose</strong> or drag and drop<br/>your nature photograph here
+              </p>
+            </div>
+            <img class="upload-preview" id="upload-preview" src="" alt="Preview of your selected photograph" />
+          </div>
+          <p id="upload-hint" class="form-hint">JPG, PNG or WebP · Maximum 10 MB · Nature subjects only</p>
+          <p class="form-error" id="photo-error" aria-live="assertive" role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="alt-text">
+            Describe your photograph <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            class="form-input"
+            type="text"
+            id="alt-text"
+            name="alt_text"
+            placeholder="e.g. Misty pine forest at sunrise in the Scottish Highlands"
+            required
+            maxlength="200"
+            aria-describedby="alt-hint alt-error"
+          />
+          <p id="alt-hint" class="form-hint">This helps visually impaired visitors experience your image. Be specific and descriptive.</p>
+          <p class="form-error" id="alt-error" role="alert" aria-live="assertive"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="location">
+            Where was this taken? <span class="form-optional">(optional)</span>
+          </label>
+          <input
+            class="form-input"
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g. Cairngorms, Scotland"
+            maxlength="100"
+          />
+        </div>
+
+      </fieldset>
+
+      <!-- Title & wisdom -->
+      <fieldset class="form-section">
+        <legend class="form-section-title">Words to accompany it</legend>
+
+        <div class="form-group">
+          <label class="form-label" for="title">
+            Give this moment a name <span class="required" aria-label="required">*</span>
+          </label>
+          <input
+            class="form-input"
+            type="text"
+            id="title"
+            name="title"
+            placeholder="e.g. Dawn Before the Storm"
+            required
+            maxlength="80"
+            aria-describedby="title-error"
+          />
+          <p class="form-error" id="title-error" role="alert" aria-live="assertive"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="wisdom">
+            Words of wisdom or reflection <span class="required" aria-label="required">*</span>
+          </label>
+          <textarea
+            class="form-textarea"
+            id="wisdom"
+            name="wisdom"
+            placeholder="Share a thought, a quote, a reflection — something that speaks to what this moment means to you."
+            required
+            minlength="20"
+            maxlength="1000"
+            aria-describedby="wisdom-hint wisdom-count wisdom-error"
+          ></textarea>
+          <div class="form-row-between">
+            <p id="wisdom-hint" class="form-hint">Your words will appear beside the photograph for visitors to read.</p>
+            <p class="char-count" aria-live="polite">
+              <span id="wisdom-count">0</span> / 1000
+            </p>
+          </div>
+          <p class="form-error" id="wisdom-error" role="alert" aria-live="assertive"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="attribution">
+            Attribution <span class="form-optional">(optional)</span>
+          </label>
+          <input
+            class="form-input"
+            type="text"
+            id="attribution"
+            name="attribution"
+            placeholder="e.g. — Rumi, or — your own name"
+            maxlength="100"
+          />
+          <p class="form-hint">Leave blank to attribute to Serenscape.</p>
+        </div>
+
+      </fieldset>
+
+      <!-- Contributor details -->
+      <fieldset class="form-section">
+        <legend class="form-section-title">About you <span class="form-optional">(all optional)</span></legend>
+
+        <div class="form-group">
+          <label class="form-label" for="contributor-name">Your name or a pseudonym</label>
+          <input class="form-input" type="text" id="contributor-name" name="contributor_name"
+                 placeholder="How would you like to be credited?" maxlength="80" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contributor-email">Email address</label>
+          <input class="form-input" type="email" id="contributor-email" name="contributor_email"
+                 placeholder="For curator communications only. Never shared." maxlength="200"
+                 aria-describedby="email-hint" />
+          <p id="email-hint" class="form-hint">We'll only contact you about your submission.</p>
+        </div>
+      </fieldset>
+
+      <!-- Consent -->
+      <fieldset class="form-section">
+        <legend class="form-section-title">Before you submit</legend>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="consent-rights" name="consent_rights" required
+                 aria-describedby="rights-error" />
+          <label for="consent-rights">
+            I took this photograph or have the right to share it, and I give Serenscape permission to display it on this platform.
+            <span class="required" aria-label="required">*</span>
+          </label>
+        </div>
+        <p class="form-error" id="rights-error" role="alert" aria-live="assertive"></p>
+
+        <div class="checkbox-group" style="margin-top:0.75rem;">
+          <input type="checkbox" id="consent-review" name="consent_review" />
+          <label for="consent-review">
+            I understand my photograph will be reviewed by a curator before appearing publicly. I'm happy to wait.
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary btn-large" id="submit-btn">
+          <span id="submit-btn-label">Share my photograph</span>
+          <span id="submit-btn-loading" aria-hidden="true" hidden>Sending…</span>
+        </button>
+        <p class="submit-footer-note">
+          All submissions are reviewed. Images not related to nature, or that do not meet community guidelines, will not be published.
+        </p>
+      </div>
+
+      <p class="form-error" id="form-error" role="alert" aria-live="assertive" style="text-align:center;margin-top:1rem;"></p>
+
+    </form>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">✦ Serenscape</p>
+      <p class="footer-line">A place of shared stillness.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="submit.html">Share a photograph</a></li>
+          <li><a href="about.html">About this space</a></li>
+          <li><a href="../admin/review.html">Curator login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../js/supabase-client.js"></script>
+  <script src="../js/submit.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

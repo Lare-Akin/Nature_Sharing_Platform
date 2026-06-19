@@ -1,0 +1,167 @@
+/* submit.css — Additional styles for the submission page */
+
+.submit-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.submit-intro {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.submit-intro h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--ink);
+  margin: 0.5rem 0 1rem;
+}
+
+.submit-lead {
+  color: var(--stone);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ===== Success state ===== */
+.submit-success {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background: var(--parchment);
+  border-radius: var(--r-lg);
+  border: 1.5px solid rgba(184,147,90,0.3);
+}
+
+.success-icon {
+  font-size: 2rem;
+  color: var(--gold);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.submit-success h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.submit-success p {
+  color: var(--stone);
+  max-width: 48ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== Form layout ===== */
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.form-section {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: var(--parchment);
+  border-radius: var(--r-lg);
+  padding: var(--space-md);
+  border: 1px solid rgba(92,94,85,0.1);
+}
+
+.form-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(184,147,90,0.2);
+  padding-bottom: 0.5rem;
+}
+
+.form-optional {
+  font-family: 'DM Sans', sans-serif;
+  font-size: var(--xs);
+  color: var(--mist);
+  font-weight: 400;
+}
+
+.form-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.char-count {
+  font-size: var(--xs);
+  color: var(--mist);
+  white-space: nowrap;
+}
+
+/* ===== Upload zone ===== */
+.upload-zone {
+  min-height: 180px;
+}
+
+.upload-zone.has-preview .upload-content { display: none; }
+.upload-zone.has-preview .upload-preview { display: block; width: 100%; max-height: 260px; object-fit: cover; border-radius: var(--r-md); }
+
+.upload-zone:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,147,90,0.2);
+}
+
+/* ===== Checkboxes ===== */
+.checkbox-group {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.checkbox-group input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  accent-color: var(--gold);
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.checkbox-group label {
+  font-size: var(--small);
+  color: var(--stone);
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+/* ===== Actions ===== */
+.form-actions {
+  text-align: center;
+  padding: var(--space-sm) 0;
+}
+
+.btn-large {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  min-height: 52px;
+}
+
+.submit-footer-note {
+  font-size: var(--xs);
+  color: var(--mist);
+  margin-top: 1rem;
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}

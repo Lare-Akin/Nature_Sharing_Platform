@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Serenscape — a calm space for nature, wisdom, and stillness. Browse beautiful nature photographs paired with words of reflection." />
+  <title>Serenscape — Find Your Stillness</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Skip to main content link for screen readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Serenscape home">
+        <span class="logo-mark" aria-hidden="true">✦</span>
+        <span class="logo-text">Serenscape</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul role="list">
+          <li><a href="index.html" aria-current="page">Gallery</a></li>
+          <li><a href="pages/submit.html">Share a Moment</a></li>
+          <li><a href="pages/about.html">About</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <ul role="list">
+        <li><a href="index.html">Gallery</a></li>
+        <li><a href="pages/submit.html">Share a Moment</a></li>
+        <li><a href="pages/about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-text">
+      <p class="hero-eyebrow">A sanctuary for the wandering mind</p>
+      <h1 id="hero-heading">Be still.<br />The world<br />can wait.</h1>
+      <p class="hero-sub">Nature photographs, words of wisdom, and gentle music — curated for quiet moments.</p>
+      <a href="#gallery" class="btn-primary">Enter the gallery</a>
+    </div>
+    <div class="hero-image-frame" aria-hidden="true">
+      <div class="hero-placeholder">
+        <span>🌿</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <main id="main-content">
+    <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
+      <div class="section-header">
+        <h2 id="gallery-heading">The Gallery</h2>
+        <p class="section-sub">Each image is a doorway. Step through and breathe.</p>
+      </div>
+
+      <!-- Gallery grid — populated by gallery.js from Supabase -->
+      <div class="gallery-grid" id="gallery-grid" role="list" aria-live="polite" aria-label="Nature photographs gallery">
+        <p class="gallery-loading" id="gallery-loading" aria-live="assertive">Loading moments of stillness…</p>
+      </div>
+
+      <div class="gallery-empty" id="gallery-empty" hidden>
+        <p>The gallery is being tended. Come back soon.</p>
+        <a href="pages/submit.html" class="btn-secondary">Be the first to share</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== LIGHTBOX / VIEWING EXPERIENCE ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-container">
+
+      <!-- Image side -->
+      <div class="lightbox-image-pane">
+        <img id="lightbox-img" src="" alt="" class="lightbox-photo" />
+        <div class="lightbox-image-meta">
+          <span id="lightbox-location" class="lightbox-location"></span>
+        </div>
+      </div>
+
+      <!-- Wisdom side -->
+      <div class="lightbox-wisdom-pane">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close — return to gallery">
+          <span aria-hidden="true">✕</span>
+        </button>
+
+        <div class="wisdom-content">
+          <div class="wisdom-mark" aria-hidden="true">✦</div>
+          <h2 id="lightbox-title" class="wisdom-title"></h2>
+          <blockquote class="wisdom-quote" id="lightbox-quote">
+            <p id="lightbox-wisdom"></p>
+          </blockquote>
+          <p class="wisdom-attribution" id="lightbox-attribution"></p>
+        </div>
+
+        <!-- Music player -->
+        <div class="music-player" aria-label="Ambient music player">
+          <p class="music-label">Choose your soundscape</p>
+          <div class="music-options" role="radiogroup" aria-label="Ambient music tracks">
+            <button class="music-btn" role="radio" aria-checked="false" data-track="forest" data-src="audio/forest-birdsong.mp3">
+              <span class="music-icon" aria-hidden="true">🌲</span>
+              <span>Forest</span>
+            </button>
+            <button class="music-btn" role="radio" aria-checked="false" data-track="rain" data-src="audio/gentle-rain.mp3">
+              <span class="music-icon" aria-hidden="true">🌧</span>
+              <span>Rain</span>
+            </button>
+            <button class="music-btn" role="radio" aria-checked="false" data-track="ocean" data-src="audio/ocean-waves.mp3">
+              <span class="music-icon" aria-hidden="true">🌊</span>
+              <span>Ocean</span>
+            </button>
+            <button class="music-btn" role="radio" aria-checked="false" data-track="wind" data-src="audio/mountain-wind.mp3">
+              <span class="music-icon" aria-hidden="true">🍃</span>
+              <span>Wind</span>
+            </button>
+            <button class="music-btn" role="radio" aria-checked="false" data-track="bells" data-src="audio/tibetan-bells.mp3">
+              <span class="music-icon" aria-hidden="true">🔔</span>
+              <span>Bells</span>
+            </button>
+            <button class="music-btn music-btn--off" role="radio" aria-checked="true" data-track="none">
+              <span class="music-icon" aria-hidden="true">○</span>
+              <span>Silence</span>
+            </button>
+          </div>
+
+          <div class="music-controls" id="music-controls">
+            <audio id="audio-player" aria-label="Ambient audio player" loop>
+              <p>Your browser does not support audio playback.</p>
+            </audio>
+            <div class="volume-row">
+              <label for="volume-slider" class="volume-label">
+                <span aria-hidden="true">🔈</span>
+                <span class="sr-only">Volume</span>
+              </label>
+              <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="50" aria-label="Volume control" />
+              <span aria-hidden="true">🔊</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation between images -->
+        <div class="lightbox-nav" aria-label="Navigate between photographs">
+          <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous photograph">
+            <span aria-hidden="true">←</span> Prev
+          </button>
+          <button class="lightbox-next" id="lightbox-next" aria-label="Next photograph">
+            Next <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-logo">✦ Serenscape</p>
+      <p class="footer-line">A place of shared stillness. Every photograph a gift.</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer-links" role="list">
+          <li><a href="pages/submit.html">Share a photograph</a></li>
+          <li><a href="pages/about.html">About this space</a></li>
+          <li><a href="admin/review.html">Curator login</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">Images remain the property of their contributors. Used with gratitude.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
