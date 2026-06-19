@@ -95,19 +95,19 @@
 
       // 2. Insert record (approved = false — awaits curator review)
       const record = {
-        title:             getValue('title'),
-        wisdom:            getValue('wisdom'),
-        attribution:       getValue('attribution') || '— Serenscape',
-        alt_text:          getValue('alt-text'),
-        location:          getValue('location'),
-        contributor_name:  getValue('contributor-name'),
-        contributor_email: getValue('contributor-email'),
-        storage_path:      storagePath,
-        image_url:         imageUrl,
+        title:             getValue('title')             || null,
+        wisdom:            getValue('wisdom')             || null,
+        attribution:       getValue('attribution')        || '— Laré & Nature',
+        alt_text:          getValue('alt-text')           || null,
+        location:          getValue('location')           || null,
+        contributor_name:  getValue('contributor-name')   || null,
+        contributor_email: getValue('contributor-email')  || null,
+        storage_path:      storagePath                    || null,
+        image_url:         imageUrl                       || null,
         approved:          false,
         created_at:        new Date().toISOString()
       };
-
+      
       if (db) {
         const { error: insertErr } = await db.from(TABLES.photos).insert([record]);
         if (insertErr) throw new Error('Submission failed: ' + insertErr.message);
