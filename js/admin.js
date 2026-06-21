@@ -48,14 +48,16 @@
   // ── Sign out ──────────────────────────────────────────────────────
   signoutBtn?.addEventListener('click', async () => {
     if (db) await db.auth.signOut();
-    loginGate.hidden = false;
+    loginGate.style.display = 'flex';
     reviewMain.hidden = true;
+    signoutBtn.hidden = true;
   });
 
   // ── Show review interface ─────────────────────────────────────────
   function showReview() {
     loginGate.style.display = 'none';
     reviewMain.hidden = false;
+    signoutBtn.hidden = false;
     loadPending();
   }
 
