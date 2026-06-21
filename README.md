@@ -1,4 +1,4 @@
-# ✦ Serenscape
+# ✦ Laré & Nature
 
 **A calm platform for nature photography, wisdom, and mindfulness.**
 
