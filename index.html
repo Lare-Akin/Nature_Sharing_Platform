@@ -96,13 +96,15 @@
           <li><a href="pages/gallery.html">View the gallery</a></li>
           <li><a href="pages/submit.html">Share a photograph</a></li>
           <li><a href="pages/about.html">About this space</a></li>
-          <li><a href="admin/review.html">Curator login</a></li>
         </ul>
       </nav>
-      <p class="footer-copy">Images remain the property of their contributors. Used with gratitude.</p>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Laré & Nature. All rights reserved. Images remain the property of their contributors and are shared with gratitude. Unauthorised reproduction is prohibited.</p>
     </div>
   </footer>
 
   <script src="js/nav.js"></script>
+  <script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

@@ -48,7 +48,7 @@
     <div class="submit-intro">
       <p class="hero-eyebrow">Contribute</p>
       <h1>Share a moment of nature</h1>
-      <p class="submit-lead">Your photograph will be reviewed by our curator before appearing in the gallery. Every image is a gift to those who need stillness.</p>
+      <p class="submit-lead">Your photograph will be reviewed by a curator before appearing in the gallery. Every image is a gift to those who need stillness.</p>
     </div>
 
     <!-- Success message (hidden until submission) -->
@@ -105,7 +105,7 @@
             type="text"
             id="alt-text"
             name="alt_text"
-            placeholder="e.g. Misty pine forest at sunrise in the Scottish Highlands"
+            placeholder="e.g. Idanre mountain range in Nigeria, with a misty valley and scattered trees"
             required
             maxlength="200"
             aria-describedby="alt-hint alt-error"
@@ -123,7 +123,7 @@
             type="text"
             id="location"
             name="location"
-            placeholder="e.g. Cairngorms, Scotland"
+            placeholder="e.g. Sopot, Bulgaria"
             maxlength="100"
           />
         </div>
@@ -206,7 +206,7 @@
           <input class="form-input" type="email" id="contributor-email" name="contributor_email"
                  placeholder="For curator communications only. Never shared." maxlength="200"
                  aria-describedby="email-hint" />
-          <p id="email-hint" class="form-hint">We'll only contact you about your submission.</p>
+          <p id="email-hint" class="form-hint">You will only be contacted about your submission.</p>
         </div>
       </fieldset>
 
@@ -260,6 +260,7 @@
           <li><a href="../admin/review.html">Curator login</a></li>
         </ul>
       </nav>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Laré & Nature. All rights reserved. Images remain the property of their contributors and are shared with gratitude. Unauthorised reproduction is prohibited.</p>
     </div>
   </footer>
 
@@ -267,5 +268,8 @@
   <script src="../js/supabase-client.js"></script>
   <script src="../js/submit.js"></script>
   <script src="../js/nav.js"></script>
+  <script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
