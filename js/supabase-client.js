@@ -1,5 +1,5 @@
 /**
- * supabase-client.js
+ * supabase-client.https://supabase.com/dashboard/project/ehhdkytpvpkrsxygemql/integrations/data_api/overviewjs
  * ─────────────────────────────────────────────
  * Initialises the Supabase JS client.
  * Replace the two constants below with your
